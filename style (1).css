@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+table.output,
+tr.output,
+td.output {
+    width: 500px;
+    background-color: #333333;
+    padding: 10px;
+    border-spacing: 2px;
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+td.output span {
+    color: #64B769;
+
+    
+}
+
+
+.pword-message {
+    font-family: 'Rubik', sans-serif;
+    background: white;
+    padding: 10px;
+    border-spacing: 2px;
+    border-radius: 20px;
+    color: red;
+    position: static; left: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+text-align: left;
+}
+    
+
+
+
+#review {
+    margin-top: 5px;
+}
+
+body { 
+  background-color: #FFFBF2; 
+  font-family: 'Rubik', sans-serif; 
+  max-width: 700px; 
+  margin: 40px auto; 
+  padding: 0 20px; 
+}
+
+h1 {
+  color: #333333; 
+  text-align: center; 
+  font-family: 'Rubik', sans-serif; 
+  margin-bottom: 1em; 
+}
+
+h2 {
+  color: #FFFFFF;
+  background-color: #37773B;
+  text-align: left;
+  font-family: 'Rubik', sans-serif;
+  padding: 8px 12px;
+  margin: 20px 0 0 0;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-family: 'Rubik', sans-serif;
+}
+.td1 {
+    text-align: right;
+    font-family: "Rubik", sans-serif;
+    font-weight: normal;
+}
+th {
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #37773B;
+    font-family: "Rubik";
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 10px;
+  font-size: 1.1em;
+  font-family: 'Rubik', sans-serif;
+}
+
+label {
+    text-align: right;
+    font-family: "Rubik", sans-serif;
+    font-weight: normal;
+}
+input {
+    text-align: left;
+    font-family: "Rubik", sans-serif;
+    font-weight: normal;
+}
+
+select {
+     text-align: left;
+    font-family: "Rubik", sans-serif;
+    font-weight: normal;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 6px;
+}
+
+.radio-group input[type="radio"] {
+  display: inline;
+  width: auto;
+  margin: 0;
+}
+
+.radio-group label {
+  display: inline;
+  margin-top: 0;
+  font-weight: normal;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  display: inline;
+  width: auto;
+  margin: 0;
+}
+
+.checkbox-group label {
+  display: inline;
+  margin-top: 0;
+  font-weight: normal;
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 24px;
+  background-color: #37773B;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #2a5c2e;
+}
+
+footer {
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  background: #2e2f34;
+  color:#ececec;
+  margin-top: 26px;
+  padding: 56px 0 38px;
+}

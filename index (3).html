@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<!--
+  Program name: Medical Form
+  Author: Julian C Siudmak
+  Date Created: 2/20/2026
+  Date Last edited: 3/23/2026
+  Version: 1.0
+  Description: Medical form for a fictional doctor's office that collects
+               patient personal and medical information, with a review button.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medical Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+  <header>
+    <table width="100%">
+      <tr>
+        <td valign="top" align="left" width="20%">
+          <div class="image">
+            <img src="logo-header.svg" alt="Sable Bioclinic">
+          </div>
+        </td>
+        <td></td>
+        <td valign="bottom" align="right" width="20%">
+          <p>Today's Date: <span id="today"></span></p>
+        </td>
+      </tr>
+    </table>
+  </header>
+ 
+  <hr>
+ 
+  <h1>New Patient Registration</h1>
+  <p id="datetime" align="left"></p>
+  <p>Fields marked with * are required</p>
+ 
+  <form id="signup" action="thankyou.html">
+    <div class="format">
+      <table>
+ 
+        <!-- Account Setup -->
+        <tr>
+          <th colspan="4">Account Setup</th>
+        </tr>
+ 
+        <tr>
+          <td class="td1"><label for="user">User ID:</label></td>
+          <td>
+            <input
+              type="text"
+              name="user"
+              id="user"
+              maxlength="20"
+              required
+              title="Username must contain at least 5 characters. It cannot start with a number"
+              placeholder="Desired User ID"
+              onblur="validateUsername()"
+            />
+            <span class="error" id="username-error"></span>
+          </td>
+ 
+          <td class="td1"><label for="email">Email Address:</label></td>
+          <td>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              required
+              pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,20}$"
+              onblur="validateEmail()"
+              placeholder="Email Address"
+            />
+            <br>
+            <span class="error" id="email-error"></span>
+          </td>
+        </tr>
+ 
+        <tr>
+          <td class="td1"><label for="password">Password:*</label></td>
+          <td>
+            <input
+              type="password"
+              id="password"
+              required
+              onkeyup="checkPasswordMatch();"
+              onblur="validatePassword()"
+              oninput="validatePassword()"
+            />
+          </td>
+ 
+          <td class="td1"><label for="confirm_pass">Re-enter Password:*</label></td>
+          <td>
+            <input
+              type="password"
+              id="confirm_pass"
+              required
+              onkeyup="checkPasswordMatch();"
+              onblur="confirmPass()"
+              oninput="confirmPass()"
+            />
+            <span class="error" id="confirm_pass-error"></span>
+          </td>
+        </tr>
+ 
+        <tr>
+          <th colspan="4">Password Requirements</th>
+        </tr>
+ 
+        <tr>
+          <td colspan="4" style="padding: 8px;">
+            <div class="pword-message">
+              <span id="msg1"></span><br>
+              <span id="msg2"></span><br>
+              <span id="msg3"></span><br>
+              <span id="msg4"></span><br>
+            </div>
+          </td>
+        </tr>
+ 
+        <!-- Demographics and Contact-->
+        <tr>
+          <th colspan="4">Demographics and Contact</th>
+        </tr>
+ 
+        <tr>
+          <td class="td1"><label for="fname">First Name:</label></td>
+          <td>
+            <input
+              type="text"
+              name="fname"
+              id="fname"
+              minlength="1"
+              maxlength="30"
+              required
+              title="Letters, apostrophes, and dashes only"
+              pattern="[a-zA-Z'\-]{1,30}"
+              onblur="validateFname()"
+              placeholder="First Name"
+            />
+            <br>
+            <span class="error" id="fname-error"></span>
+          </td>
+ 
+          <td class="td1"><label for="mname">Middle Initial:</label></td>
+          <td>
+            <input
+              type="text"
+              name="mname"
+              id="mname"
+              minlength="1"
+              maxlength="1"
+              title="One letter only"
+              pattern="[a-zA-Z]"
+              onblur="validateMname()"
+              placeholder="Middle Initial"
+            />
+            <br>
+            <span class="error" id="mname-error"></span>
+          </td>
+        </tr>
+ 
+        <tr>
+          <td class="td1"><label for="lname">Last Name:</label></td>
+          <td>
+            <input
+              type="text"
+              name="lname"
+              id="lname"
+              minlength="1"
+              maxlength="30"
+              required
+              title="Letters, apostrophes, and dashes only"
+              pattern="[a-zA-Z'\-]{1,30}"
+              onblur="validateLname()"
+              placeholder="Last Name"
+            />
+            <br>
+            <span class="error" id="lname-error"></span>
+          </td>
+ 
+          <td class="td1"><label for="dob">Date of Birth:</label></td>
+          <td>
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              required
+              onblur="validateDob()"
+            />
+            <br>
+            <span class="error" id="dob-error"></span>
+          </td>
+        </tr>
+ 
+        <tr>
+          <td class="td1"><label for="ssn">SSN:</label></td>
+          <td>
+            <input
+              type="password"
+              name="ssn"
+              id="ssn"
+              minlength="9"
+              maxlength="11"
+              required
+              title="Numbers only"
+              placeholder="123-45-6789"
+              onblur="validateSsn()"
+            />
+            <span class="error" id="ssn-error"></span>
+          </td>
+ 
+          <td class="td1"><label for="phone">Phone Number:</label></td>
+          <td>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              required
+              title="Please enter phone number in format 123-456-7890"
+              placeholder="123-456-7890"
+              onblur="validatePhone()"
+            />
+            <br>
+            <span class="error" id="phone-error"></span>
+          </td>
+        </tr>
+ 
+        <tr>
+          <td class="td1"><label for="address1">Address Line 1:</label></td>
+          <td>
+            <input
+              type="text"
+              name="address1"
+              id="address1"
+              maxlength="30"
+              title="Letters, numbers, dashes, and apostrophes only"
+              required
+              placeholder="123 Main St"
+              onblur="validateAddress1()"
+            />
+            <br>
+            <span class="error" id="address1-error"></span>
+          </td>
+ 
+          <td class="td1"><label for="address2">Address Line 2:</label></td>
+          <td>
+            <input
+              type="text"
+              name="address2"
+              id="address2"
+              maxlength="30"
+              placeholder="Apt 10A"
+            />
+          </td>
+        </tr>
+ 
+        <tr>
+          <td class="td1"><label for="city">City:</label></td>
+          <td>
+            <input
+              type="text"
+              name="city"
+              id="city"
+              maxlength="30"
+              required
+              onblur="validateCity()"
+            />
+            <br>
+            <span class="error" id="city-error"></span>
+          </td>
+ 
+          <td class="td1"><label for="state">State:</label></td>
+          <td>
+            <select id="state" name="state">
+              <option selected disabled>Select State</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </td>
+        </tr>
+ 
+        <tr>
+          <td class="td1"><label for="zip">Zip Code:</label></td>
+          <td>
+            <input
+              type="text"
+              name="zip"
+              id="zip"
+              minlength="5"
+              maxlength="10"
+              required
+              title="5-digit zip code"
+              placeholder="12345"
+              pattern="[0-9]{5}"
+              onblur="validateZip()"
+            />
+            <br>
+            <span class="error" id="zip-error"></span>
+          </td>
+ 
+          <td class="td1"><label for="pgender">Gender:</label></td>
+          <td>
+            <input type="radio" id="g1" name="pgender" value="Male"> Male
+            <input type="radio" id="g2" name="pgender" value="Female"> Female
+            <input type="radio" id="g3" name="pgender" value="Other"> Other
+          </td>
+        </tr>
+ 
+        <!--  Health Information -->
+        <tr>
+          <th colspan="4">Enhanced Intake and Health Information</th>
+        </tr>
+ 
+        <tr>
+          <td class="td1"><label for="insurance1">Are you insured?</label></td>
+          <td>
+            <input type="radio" id="insurance1" name="insurance" value="Yes"> Yes
+            <input type="radio" id="insurance2" name="insurance" value="No"> No
+          </td>
+ 
+          <td class="td1">
+            <label for="range">
+              Current Pain Level<br>
+              Rate from 0 to 10<br>
+              0 = none &nbsp; 10 = severe
+            </label>
+          </td>
+          <td>
+            <input
+              type="range"
+              name="range"
+              id="range"
+              min="0"
+              max="10"
+              value="0"
+            />
+            <span id="range-slider"></span>
+          </td>
+        </tr>
+ 
+        <tr>
+          <td class="td1"><label>Have you ever had:</label></td>
+          <td>
+            <input type="checkbox" id="option1" value="Influenza">
+            <label for="option1">Influenza</label><br>
+            <input type="checkbox" id="option2" value="Measles">
+            <label for="option2">Measles</label><br>
+            <input type="checkbox" id="option3" value="Chicken Pox">
+            <label for="option3">Chicken Pox</label><br>
+            <input type="checkbox" id="option4" value="Tuberculosis">
+            <label for="option4">Tuberculosis</label><br>
+            <input type="checkbox" id="option5" value="Other">
+            <label for="option5">Other</label>
+          </td>
+ 
+          <td class="td1"><label for="notes">Additional Notes:</label></td>
+          <td>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="4"
+              cols="35"
+              placeholder="Enter any additional medical history or allergies"
+            ></textarea>
+          </td>
+        </tr>
+ 
+        <!--  Form Actions  -->
+        <tr>
+          <td colspan="4" style="text-align: center;">
+            <input type="submit" name="submit" value="Submit">
+            <input type="reset" name="reset" value="Reset">
+            <input
+              type="button"
+              name="review"
+              id="review"
+              value="Review"
+              onclick="reviewInput()"
+            />
+            <p id="showInput"></p>
+          </td>
+        </tr>
+ 
+      </table>
+    </div>
+  </form>
+ 
+  <footer>
+    <img src="logo-footer.svg" alt="Sable Bioclinic">
+    <p class="address">123 Mulberry St.<br>Houston, TX 77070</p>
+    <p>Connect with us</p>
+    <a href="https://www.instagram.com/hire_bauer/?hl=en">Instagram</a>
+  </footer>
+ 
+  <script src="hw2.js"></script>
+</body>
+</html>
