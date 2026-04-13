@@ -8,12 +8,12 @@ Description: JavaScript file for homework 3. Further enhances validation button 
 
 
 
-//  -- Dynamic date --
+//  Dynamic date 
 const d = new Date();
 document.getElementById("today").innerHTML = d.toLocaleDateString();
  
  
-// -- Pain-level slider --
+// Pain slider 
 let slider = document.getElementById("range");
 let output = document.getElementById("range-slider");
 if (slider && output) {
@@ -24,7 +24,7 @@ if (slider && output) {
 }
  
  
-// -- Review button --
+//  Review button 
 function reviewInput() {
     var formcontent = document.getElementById("signup");
     if (!formcontent) return;
@@ -76,7 +76,7 @@ function reviewInput() {
 }
  
  
-// -- Username --
+// Username 
 function validateUsername() {
     let uid = document.getElementById("user").value.toLowerCase();
     document.getElementById("user").value = uid;
@@ -106,7 +106,7 @@ function validateUsername() {
 }
  
  
-// -- Email --
+// Email 
 var emailR = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
  
 function validateEmail() {
@@ -120,7 +120,7 @@ function validateEmail() {
 }
  
  
-// -- Password --
+// Password 
 function validatePassword() {
     const pass = document.getElementById("password").value;
     const username = document.getElementById("user").value;
@@ -134,7 +134,7 @@ function validatePassword() {
     if (!pass.match(/[!@#$%&*\-_\\.+()]/)) errors.push("Must have at least one special character (!@#$%&*-_.+())");
     if (username && pass.includes(username)) errors.push("Password cannot contain your username");
  
-    // DISPLAY MSG
+    // Error Message
     for (let i = 0; i < msgs.length; i++) {
         const el = document.getElementById(msgs[i]);
         if (el) el.innerHTML = errors[i] ? "⚠ " + errors[i] : "";
@@ -163,7 +163,7 @@ function checkPasswordMatch() {
 }
  
  
-// -- First name --
+// First name 
 function validateFname() {
     const fname = document.getElementById("fname").value;
     if (fname.length === 0) {
@@ -179,7 +179,7 @@ function validateFname() {
 }
  
  
-// -- Middle initial --
+//  Middle initial 
 function validateMname() {
     const mname = document.getElementById("mname").value;
     if (mname.length === 0) {
@@ -195,7 +195,7 @@ function validateMname() {
 }
  
  
-// -- Last name --
+// Last name 
 function validateLname() {
     const lname = document.getElementById("lname").value;
     if (lname.length === 0) {
@@ -211,7 +211,7 @@ function validateLname() {
 }
  
  
-// -- DOB --
+// DOB 
 function validateDob() {
     const dob = document.getElementById("dob");
     const date = new Date(dob.value);
@@ -237,7 +237,7 @@ function validateDob() {
 }
  
  
-// -- SSN --
+// SSN 
 function validateSsn() {
     const ssn = document.getElementById("ssn").value;
     const ssnR = /^[0-9]{3}-?[0-9]{2}-?[0-9]{4}$/;
@@ -251,7 +251,7 @@ function validateSsn() {
 }
  
  
-// -- Phone --
+// Phone 
 function validatePhone() {
     const phone = document.getElementById("phone").value;
     const phoneR = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
@@ -265,7 +265,7 @@ function validatePhone() {
 }
  
  
-// -- Address line 1 --
+// Address line 1
         function validateAddress1() {
                 const addr = document.getElementById("address1").value;
                 if (addr.length === 0) {
@@ -277,7 +277,7 @@ function validatePhone() {
 }
  
  
-// -- City --
+// City 
 function validateCity() {
     const city = document.getElementById("city").value;
     if (city.length === 0) {
@@ -293,7 +293,7 @@ function validateCity() {
 }
  
  
-// -- Zip code --
+// Zip code 
 function validateZip() {
     const zip = document.getElementById("zip").value;
     if (!/^[0-9]{5}$/.test(zip)) {
