@@ -1,7 +1,7 @@
 /*
 Name: Julian Siudmak
-Date created: 3/25/2026
-Date last edited: 3/25/2026
+Date created: 4/13/2026
+Date last edited: 4/13/2026
 Version: 1.0
 Description: JavaScript file for homework 2. Validates patient data 
 */
