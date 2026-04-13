@@ -3,7 +3,7 @@ Name: Julian Siudmak
 Date created: 4/13/2026
 Date last edited: 4/13/2026
 Version: 1.0
-Description: JavaScript file for homework 2. Validates patient data 
+Description: JavaScript file for homework 3. Further enhances validation button for entering patient data 
 */
 
 
@@ -128,10 +128,10 @@ function validatePassword() {
  
     const errors = [];
  
-    if (!pass.match(/[a-z]/))          errors.push("At least one lowercase letter");
-    if (!pass.match(/[A-Z]/))          errors.push("At least one uppercase letter");
-    if (!pass.match(/[0-9]/))          errors.push("At least one number");
-    if (!pass.match(/[!@#$%&*\-_\\.+()]/)) errors.push("At least one special character (!@#$%&*-_.+())");
+    if (!pass.match(/[a-z]/))          errors.push("Must have at least one lowercase letter");
+    if (!pass.match(/[A-Z]/))          errors.push("Must have at least one uppercase letter");
+    if (!pass.match(/[0-9]/))          errors.push("Must have at least one number");
+    if (!pass.match(/[!@#$%&*\-_\\.+()]/)) errors.push("Must have at least one special character (!@#$%&*-_.+())");
     if (username && pass.includes(username)) errors.push("Password cannot contain your username");
  
     // DISPLAY MSG
@@ -243,7 +243,7 @@ function validateSsn() {
     const ssnR = /^[0-9]{3}-?[0-9]{2}-?[0-9]{4}$/;
  
     if (!ssnR.test(ssn)) {
-        document.getElementById("ssn-error").innerHTML = "Please enter a valid SSN (e.g. 123-45-6789)";
+        document.getElementById("ssn-error").innerHTML = "Please enter a valid SSN (123-45-6789)";
         return false;
     }
     document.getElementById("ssn-error").innerHTML = "";
