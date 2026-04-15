@@ -3,7 +3,7 @@
   Program name: Medical Form
   Author: Julian C Siudmak
   Date Created: 4/13/2026
-  Date Last edited: 3/23/2026
+  Date Last edited: 4/15/2026
   Version: 1.0
   Description: Medical form for a fictional doctor's office that collects
                patient personal and medical information, with a review button.
@@ -431,12 +431,24 @@
               onclick="reviewInput()"
             />
             <p id="showInput"></p>
+            
+            <input type="button" 
+                    name="validate" 
+                    id="validate" 
+                    value="Validate"
+                    onclick="validateEverything()">
           </td>
         </tr>
  
       </table>
     </div>
   </form>
+        <div id="alert-box">
+        <div id="alert-content">
+            <h4>Please fill out all <b>required</b> fields. </h4>
+        <button id="close-alert">OK</button>
+    </div>
+</div>
  
   <footer>
     <img src="logo-footer.svg" alt="Sable Bioclinic">
