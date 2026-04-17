@@ -421,34 +421,32 @@
         <!--  Form Actions  -->
         <tr>
           <td colspan="4" style="text-align: center;">
+            
             <input type="submit" name="submit" value="Submit">
+            
             <input type="reset" name="reset" value="Reset">
+            
             <input
               type="button"
               name="review"
               id="review"
               value="Review"
-              onclick="reviewInput()"
-            />
-            <p id="showInput"></p>
-            
+              onclick="reviewInput()"/>
+                 
             <input type="button" 
                     name="validate" 
                     id="validate" 
                     value="Validate"
                     onclick="validateEverything()">
+            
+            <p id="showInput"></p>
           </td>
         </tr>
  
       </table>
     </div>
   </form>
-        <div id="alert-box">
-        <div id="alert-content">
-            <h4>Please fill out all <b>required</b> fields. </h4>
-        <button id="close-alert">OK</button>
-    </div>
-</div>
+
  
   <footer>
     <img src="logo-footer.svg" alt="Sable Bioclinic">
@@ -458,5 +456,13 @@
   </footer>
  
   <script src="hw3.js"></script>
+  
+<!-- alert when requirements are not met --> 
+          <div id="alert-box">
+        <div id="alert-content">
+            <h4>Please fill out all <b>required</b> fields. </h4>
+        <button id="close-alert">OK</button>
+    </div>
+</div>
 </body>
 </html>
