@@ -60,6 +60,9 @@ if (!validateEmail() {
   valid = false;
  }
 
+ if (valid) {document.getElementById("submit").disabled = false;
+            } else {showAlert();} 
+
 
 }
 
