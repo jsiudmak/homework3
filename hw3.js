@@ -6,6 +6,64 @@ Version: 1.0
 Description: JavaScript file for homework 3. Further enhances validation button for entering patient data 
 */
 
+/// Alert Box
+function showAlert() {
+ var alertbox = document.getElementByID("alert-box");
+ var closeAlert = document.getElementByID("close-alert ");
+
+  alertBox.style.display = "block";
+ closeAlert.onclick = function() {
+  alertBox.style.display = "none";
+ };
+}
+ 
+/// validate everything
+function validateEverything() {
+ let valid = true;
+ if (!validateUsername() {
+  valid = false;
+ }
+if (!validateEmail() {
+  valid = false;
+ }
+ if (!validatePassword() {
+  valid = false;
+ }
+ if (!confirmPass() {
+  valid = false;
+ }
+ if (!validateFname() {
+  valid = false;
+ }
+ if (!validateMname() {
+  valid = false;
+ }
+ if (!validateLname() {
+  valid = false;
+ }
+ if (!validateDob() {
+  valid = false;
+ }
+ if (!validateSsn() {
+  valid = false;
+ }
+ if (!validatePhone() {
+  valid = false;
+ }
+ if (!validateAddress1() {
+  valid = false;
+ }
+ if (!validateCity() {
+  valid = false;
+ }
+ if (!validateZip() {
+  valid = false;
+ }
+
+
+}
+
+
 
 
 //  Dynamic date 
@@ -77,7 +135,7 @@ function reviewInput() {
  
  
 // Username 
-function validateUsername() {
+function Username() {
     let uid = document.getElementById("user").value.toLowerCase();
     document.getElementById("user").value = uid;
  
