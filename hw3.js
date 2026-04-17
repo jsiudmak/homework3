@@ -61,7 +61,11 @@ if (!validateEmail() {
  }
 
  if (valid) {document.getElementById("submit").disabled = false;
-            } else {showAlert();} 
+            } else 
+                    {
+                     showAlert();
+                   
+                   } 
 
 
 }
