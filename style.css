@@ -1,5 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+
+
+#alert-box {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: transparent;
+}
+#alert-content {
+    background-color: #333333;
+    border-radius: 10px;
+    width: _px;
+    height: _px;
+    margin: auto;
+    margin-top: _px;
+    padding: _px;
+    text-align: center;
+}
+
+#alert-content h4 {
+   font-size: 10px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    font-weight: normal;
+}
+
+#close-alert {
+    background-color: #FFFFFF;
+    border-width: 1px;
+    border-style: solid;
+    color: #333333;
+    border-color: #000000;
+    font-size: 10px;
+    font-weight: bold;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 8px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+
 table.output,
 tr.output,
 td.output {
@@ -29,7 +79,7 @@ td.output span {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-text-align: left;
+    text-align: left;
 }
     
 
