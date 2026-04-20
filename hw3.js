@@ -11,7 +11,6 @@ function showAlert() {
  var alertbox = document.getElementById("alert-box");
  var closeAlert = document.getElementById("close-alert");
 
-  alertBox.style.display = "block";
  closeAlert.onclick = function() {
   alertBox.style.display = "none";
  };
@@ -142,7 +141,7 @@ function reviewInput() {
  
  
 // Username 
-function Username() {
+function validateUsername() {
     let uid = document.getElementById("user").value.toLowerCase();
     document.getElementById("user").value = uid;
  
