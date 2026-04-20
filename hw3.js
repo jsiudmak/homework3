@@ -8,8 +8,8 @@ Description: JavaScript file for homework 3. Further enhances validation button 
 
 /// Alert Box
 function showAlert() {
- var alertbox = document.getElementByID("alert-box");
- var closeAlert = document.getElementByID("close-alert ");
+ var alertbox = document.getElementById("alert-box");
+ var closeAlert = document.getElementById("close-alert");
 
   alertBox.style.display = "block";
  closeAlert.onclick = function() {
@@ -20,43 +20,43 @@ function showAlert() {
 /// validate everything
 function validateEverything() {
  let valid = true;
- if (!validateUsername() {
+ if (!validateUsername()) {
   valid = false;
  }
-if (!validateEmail() {
+if (!validateEmail()) {
   valid = false;
  }
- if (!validatePassword() {
+ if (!validatePassword() ){
   valid = false;
  }
- if (!confirmPass() {
+ if (!confirmPass()){
   valid = false;
  }
- if (!validateFname() {
+ if (!validateFname()) {
   valid = false;
  }
- if (!validateMname() {
+ if (!validateMname() ){
   valid = false;
  }
- if (!validateLname() {
+ if (!validateLname()) {
   valid = false;
  }
- if (!validateDob() {
+ if (!validateDob()) {
   valid = false;
  }
- if (!validateSsn() {
+ if (!validateSsn()) {
   valid = false;
  }
- if (!validatePhone() {
+ if (!validatePhone() ){
   valid = false;
  }
- if (!validateAddress1() {
+ if (!validateAddress1()) {
   valid = false;
  }
- if (!validateCity() {
+ if (!validateCity()) {
   valid = false;
  }
- if (!validateZip() {
+ if (!validateZip() ){
   valid = false;
  }
 
